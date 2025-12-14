@@ -9,8 +9,9 @@ O(n) time complexity with n iterations
 O(k) space complexity with k arms of bandit
 
 I kept track of total reward per action and number of times action has taken place to compute the RL agent's current estimation of action rewards. However, running average can be simply computed with this formula - 
+
 Qₙ₊₁ = Qₙ + 1/n * (Rₙ − Qₙ)
 
-
 new estimate = old estimate + step size (target - old estimate)
+
 target - old estimate is the error in the estimate reduced by taking a step towards the target. this simple bandit problem has stationary reward probabilities so the step size incrementally decreases. However, in non stationary problems, we can take step size to be a constant making the estimated reward a weighted average of rewards encountered. Also called exponential recency-weighted average. 
