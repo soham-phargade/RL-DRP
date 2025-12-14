@@ -44,14 +44,14 @@ def visualize(rewards, epsilon):
     for i, r in enumerate(rewards):
         plt.plot(r, label=f"ε={epsilon[i]}")
     plt.xlabel("step")
-    plt.ylabel("reward")
+    plt.ylabel("average reward")
     plt.legend()
     plt.show()
 
 if __name__ == "__main__":
     means = [0.6,0.5,0.1,0.8]
     VAR = 0.05
-    epsilon = [0,0.1,0.2]
+    epsilon = [0,0.1,0.2, 0.01]
     ITERS = 1000
     rewards = compute(means, VAR, epsilon, ITERS)
     avg_rewards = []
